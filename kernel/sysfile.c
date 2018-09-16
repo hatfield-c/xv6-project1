@@ -9,10 +9,12 @@
 #include "fcntl.h"
 #include "sysfunc.h"
 
+int READ_COUNT = 0;
+
 // Custom syscall function
 
 int sys_getreadcount(void){
-	return 0;
+	return READ_COUNT;
 }
 
 // Fetch the nth word-sized system call argument as a file descriptor
@@ -73,6 +75,9 @@ sys_read(void)
 
   if(argfd(0, 0, &f) < 0 || argint(2, &n) < 0 || argptr(1, &p, n) < 0)
     return -1;
+
+  READ_COUNT = READ_COUNT + 1;
+
   return fileread(f, p, n);
 }
 
