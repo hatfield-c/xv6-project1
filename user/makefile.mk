@@ -10,6 +10,7 @@ USER_PROGS := \
 	ln\
 	ls\
 	mkdir\
+	p2Test\
 	rm\
 	sh\
 	stressfs\
