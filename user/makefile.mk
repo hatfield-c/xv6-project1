@@ -5,12 +5,14 @@ USER_PROGS := \
 	echo\
 	forktest\
 	grep\
+	readcount1\
+	readcount2\
+	readcount3\
 	init\
 	kill\
 	ln\
 	ls\
 	mkdir\
-	p2Test\
 	rm\
 	sh\
 	stressfs\
